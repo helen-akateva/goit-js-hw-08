@@ -68,14 +68,14 @@ function createListItems(images) {
   return images
     .map((item) => {
       return `<li class="gallery-item">
-  <a class="gallery-link" href="${item.original}" >
-    <img
+    <a class="gallery-link" href="${item.original}" >
+      <img
       class="gallery-image"
       src="${item.preview}"
       data-source="${item.original}"
       alt="${item.description}"
-    />
-  </a>
+      />
+    </a>
 </li>
 `;
     })
