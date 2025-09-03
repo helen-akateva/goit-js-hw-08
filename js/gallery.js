@@ -1,3 +1,6 @@
+const refs = {
+  galleryListEl: document.querySelector(`.gallery`),
+};
 const images = [
   {
     preview:
@@ -64,7 +67,7 @@ const images = [
   },
 ];
 
-function createListItems(images) {
+function createMarkup(images) {
   return images
     .map((item) => {
       return `<li class="gallery-item">
@@ -82,6 +85,13 @@ function createListItems(images) {
     .join("");
 }
 
-const listEl = document.querySelector(`.gallery`);
+refs.galleryListEl.innerHTML = createMarkup(images);
 
-listEl.innerHTML = createListItems(images);
+refs.galleryListEl.addEventListener("click", handleClick);
+
+function handleClick(event) {
+  event.preventDefault();
+  if (event.target.nodeName !== "IMG") return;
+
+  console.log(event.target.dataset.source);
+}
