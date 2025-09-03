@@ -26,3 +26,7 @@ ul {
   height: 208px;
   transform: translateZ(0);
 }
+
+.basicLightbox {
+  background-color: rgba(46, 47, 66, 0.8);;
+}
